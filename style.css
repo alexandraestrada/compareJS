@@ -1,0 +1,70 @@
+#container {
+  width:860px;
+  height:470px;
+  margin:0 auto;
+}
+#imgContainer {
+	width:860px;
+	height:470px;
+  margin:0 auto;
+	position:relative;
+  overflow:hidden;
+
+ 
+}
+#leftImg{
+    height: 470px;
+    width: 860px;
+    position: absolute;
+    overflow: hidden;
+    left: 0px;
+}
+
+
+#rightImg{ 
+    height: 470px;
+    /*width: 430px;*/
+    position: absolute;
+    overflow: hidden;
+    right: 0px;
+    z-index: 10;
+}
+    
+
+#dragbar {
+  position: absolute;
+    top:0;
+    bottom:0;
+    width: 8px;
+    cursor: col-resize;
+    background-color: rgba(20,20,20,.6); 
+    left:100%; 
+    z-index:20;
+
+}
+#dragCircle {
+  width:14px;
+  height:70px;
+  position: absolute;
+  left:-3px;
+  top:45%;
+  background-color: rgba(10,10,10,.9);
+   z-index:50;
+   border-radius:3px;
+
+}
+#lineDash {
+  position:absolute;
+  width:8px;
+  height:8px;
+  color:white;
+  font-size:18px;
+  text-align: center;
+  text-decoration: bold;
+  z-index: 100;
+  line-height: 5px;
+  margin-top:30px;
+  left:3px;
+ 
+
+}

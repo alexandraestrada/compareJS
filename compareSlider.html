@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>jquery image slider</title>
+	<link rel="stylesheet" type="text/css" href="style.css">  
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="main.js"></script>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+<!--[if IE]>
+  <style>
+    #dragCircle {
+      left:0;
+      top:235px;
+      background-color:black;
+      z-index:1000;
+    }
+  </style>
+<![endIf]-->
+
+<div id="container">
+	<div id="imgContainer">
+	   <div id="leftImg"><img src="rl1.jpg" draggable = 'false' height="470" width="860px" style="position:absolute; top:0px; left:0px;" /></div>
+	   <div id="rightImg"><img src="rl2.jpg" height="470" width="860px" style="position:absolute; top:0px; right: 0px;"/>
+      </div> 
+      <div id="dragbar"><div id="dragCircle"><span id="lineDash">&#8211;<br />&#8211;<br /> &#8211;</span><!-- <span id="rightArrow"></span> --></div></div>
+  </div>
+</div>
+</body>
+</html>
