@@ -1,40 +1,37 @@
 
+/* Instantiate new Slider class on load. Pass in the slid container element, the image class/ids, and dragbar */
 $(document).ready(function() {	
 	  var slider = new Slider($('#slideContainer'),$('#rightImg'),$('#leftImg'),$('#dragbar'))
 	  slider.init();
 	  slider.slide();
 });
 
-
-
+/*Slider constructor */
 function Slider(container, rightImg, leftImg, dragbar) {
 	this.dragPosition= 0;
 	this.resizeImg = false;
 	this.container = container;
 	this.rightImg = rightImg;
 	this.leftImg = leftImg;
-	this.dragbar = dragbar;	
-	  
+	this.dragbar = dragbar;		  
 }
-
+/*Slider methods */
+/*retract dragbar on page load */
 Slider.prototype.retract = function(times, distance1, distance2, speed) {
 	for(var i = 0; i < times; i++) {
-        this.dragbar.animate({left: '+='+distance1}, speed)
-        this.rightImg.animate({width: '-='+distance2}, speed)
+        this.dragbar.animate({left: '+='+distance1}, speed);
+        this.rightImg.animate({width: '-='+distance2}, speed);
     } 
 }
+/*initalize Slider view */
 Slider.prototype.init = function() {
 	var slider = this;
 	slider.rightImg.animate({'width': '70%'}, "slow");
 	slider.dragbar.animate({'left': '30%'}, "slow");
-	slider.retract(1, '20%', '21%', 600);
-	
-	
+	slider.retract(1, '20%', '21%', 600);	
 }
-
-
+/*Slider functionality on drag */
 Slider.prototype.slide = function() {
-
      var self=this;
      this.dragbar.bind('mousedown',function (e) {
          e.preventDefault();
@@ -60,7 +57,7 @@ Slider.prototype.slide = function() {
 		   self.rightImg.css('width', rightWidth); //increase or decrease width of right image  
 		   self.dragbar.css('left', leftWidth);	
 
-		 })
+		 });
  		//stop scrolling on mouseup.
  		$(document).bind('mouseup', function (e) {
 	 	self.resizeImg= false;
